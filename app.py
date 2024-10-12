@@ -1,6 +1,10 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 
 app = Flask(__name__)
+
+# Permitir CORS para permitir cualquier origen
+CORS(app)
 
 @app.route('/validatePrompt', methods=['POST'])
 def validate_prompt():
